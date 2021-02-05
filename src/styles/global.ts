@@ -8,9 +8,18 @@ export default createGlobalStyle`
     box-sizing: border-box;
   }
 
+  html {
+    font-size: 62.5%;
+  }
+
   body {
-    background: #121214;
-    color: #fff;
+    background: #F6F7FB;
+    color: #334680;
+    font-size: 1.6rem;
     font-family: Arial, Helvetica, sans-serif;
+  }
+
+  button {
+    cursor: pointer;
   }
 `;
