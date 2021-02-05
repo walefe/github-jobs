@@ -1,5 +1,5 @@
 import { FC } from 'react';
 
-const Home: FC = () => <h1>Hello Next</h1>;
+const Home: FC = () => <p>Hello Next</p>;
 
 export default Home;
