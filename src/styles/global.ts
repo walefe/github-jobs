@@ -8,8 +8,9 @@ export default createGlobalStyle`
     box-sizing: border-box;
   }
 
-  html {
+  html, body {
     font-size: 62.5%;
+    height: 100vh;
   }
 
   body {
