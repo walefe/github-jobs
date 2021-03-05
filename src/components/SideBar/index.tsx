@@ -1,44 +1,41 @@
 /* eslint-disable jsx-a11y/label-has-associated-control */
-import React from 'react';
+import React, { useCallback } from 'react';
 import { FaGlobeAmericas } from 'react-icons/fa';
 
-import { Container, Header, Section, Search, RadioCountry
-} from './styles';
+import api from '@/services/api';
+import { useJob } from '@/hooks';
 
-const SideBar: React.FC = () => (
-  <Container>
-    <Header>
-      <label htmlFor="FullTime">
-        <input type="checkbox" id="FullTime" />
+import InputRadio from './InputRadio';
+
+import { Container, Header, Section, Search, RadioCountry } from './styles';
+
+const SideBar: React.FC = () => {
+  const { addJobData } = useJob();
+
+  const handleInputData = useCallback(async () => {
+    const response = await api.get(`positions.json?full_time=${true}`);
+
+    addJobData(response.data);
+  }, [addJobData]);
+
+  return (
+    <Container>
+      <Header>
+        <input type="checkbox" value="FullTime" onChange={handleInputData} />
         Full time
-      </label>
-    </Header>
-    <Section>
-      <strong>location</strong>
-      <Search>
-        <FaGlobeAmericas />
-        <input type="search" placeholder="City, state, zip code or country" />
-      </Search>
-      <RadioCountry>
-        <label htmlFor="">
-          <input type="radio" />
-          London
-        </label>
-        <label htmlFor="">
-          <input type="radio" />
-          London
-        </label>
-        <label htmlFor="">
-          <input type="radio" />
-          London
-        </label>
-        <label htmlFor="">
-          <input type="radio" />
-          London
-        </label>
-      </RadioCountry>
-    </Section>
-  </Container>
-);
+      </Header>
+      <Section>
+        <strong>location</strong>
+        <Search>
+          <FaGlobeAmericas />
+          <input type="search" placeholder="City, state, zip code or country" />
+        </Search>
+        <RadioCountry>
+          <InputRadio />
+        </RadioCountry>
+      </Section>
+    </Container>
+  );
+};
 
 export default SideBar;

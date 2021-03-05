@@ -60,15 +60,19 @@ export const Search = styled.div`
 `;
 
 export const RadioCountry = styled.div`
-  display: flex;
-  flex-direction: column;
   margin: 2.4rem 0 0 1.6rem;
 
-  label {
-    color: #334680;
-    font-size: 1.4rem;
-    font-weight: 500;
-    line-height: 2.1rem;
+  form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    label {
+      color: #334680;
+      font-size: 1.4rem;
+      font-weight: 500;
+      line-height: 2.1rem;
+    }
   }
 
   label + label {
