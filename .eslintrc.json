@@ -38,6 +38,8 @@
       "@typescript-eslint/explicit-module-boundary-types": "off",
       "arrow-parens": "off",
       "implicit-arrow-linebreak": "off",
+      "react/prop-types": "off",
+      "no-unused-vars": "off",
       "import/extensions": [
         "error",
         "ignorePackages",
