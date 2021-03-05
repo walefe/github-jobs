@@ -16,6 +16,7 @@ const Header: React.FC = () => (
       width={1201}
       height={138}
       layout="intrinsic"
+      priority
     />
     <Search />
   </Container>
