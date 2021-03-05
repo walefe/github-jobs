@@ -6,5 +6,4 @@ export const Container = styled.section`
   align-items: flex-end;
   max-width: 73rem;
   width: 100%;
-  height: 79rem;
 `;
